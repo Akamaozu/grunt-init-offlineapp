@@ -5,11 +5,14 @@ module.exports = function(grunt){
 
 			pkg: grunt.file.readJSON('package.json'),
 
-			"source-dir": "{%= src_dir_name %}",
-			"prodution-dir": "{%= prod_dir_name %}"
+			srcDirectory: "{%= src_dir_name %}",
+			debugDirectory: "{%= debug_dir_name %}",
+			buildDirectory: "{%= concat_dir_name %}",
+			prodDirectory: "{%= prod_dir_name %}"
 		});
 
-	// Load Plugins
+	// Load Plugins	
+		grunt.loadNpmTasks('grunt-contrib-jshint');
 		grunt.loadNpmTasks('grunt-contrib-uglify');
 		grunt.loadNpmTasks('grunt-contrib-cssmin'); 
 		grunt.loadNpmTasks('grunt-contrib-watch');

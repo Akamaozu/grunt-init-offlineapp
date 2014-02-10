@@ -52,8 +52,8 @@ module.exports = function(grunt){
 				htmlbuild: {
 
 			        debug: {
-			            src: '<%= srcDirectory %>/index.*', 
-			            dest: '<%= debugDirectory %>/index.*',
+			            src: '<%= srcDirectory %>/index.html', 
+			            dest: '<%= debugDirectory %>/index.html',
 			            options: {
 			                scripts: {
 			                    core: '<%= coreJS %>',
@@ -65,8 +65,8 @@ module.exports = function(grunt){
 			        },
 
 			        production: {
-			            src: '<%= srcDirectory %>/index.*', 
-			            dest: '<%= buildDirectory %>/index.*',
+			            src: '<%= srcDirectory %>/index.html', 
+			            dest: '<%= buildDirectory %>/index.html',
 			            options: {
 			                
 			                scripts: {
@@ -87,7 +87,7 @@ module.exports = function(grunt){
 
 				generate: {
 					
-					src: ['index.*'],
+					src: ['index.html'],
 					dest: '<%= buildDirectory %>/manifest.appcache',
 					options: {
 						basePath:"<%= buildDirectory %>/",
@@ -97,6 +97,16 @@ module.exports = function(grunt){
 				        timestamp: true,
 				        verbose: false,
 					},				
+				}
+			},
+
+		// copy
+			copy: {
+
+				manifest: {
+				    files: [ 
+				    	{ expand: true, flatten: true, src: ['<%= buildDirectory %>/manifest.appcache'], dest: '<%= debugDirectory %>/'}
+				    ],
 				}
 			},
 
@@ -117,7 +127,7 @@ module.exports = function(grunt){
 
 				index: {
 
-					files: '<%= srcDirectory %>/index.*',
+					files: '<%= srcDirectory %>/index.html',
 					tasks: ['htmlbuild', 'manifest', 'copy:manifest']
 				}
 

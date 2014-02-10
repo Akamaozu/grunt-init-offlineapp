@@ -9,11 +9,11 @@ exports.description = 'Grunt Scaffolding for Creating Offline-Capable Webapps';
 exports.notes = 'Reduce friction in project launch by creating a standard project boilerplate for any projects that have offline capabilities';
 
 // Template-specific notes to be displayed after question prompts.
-exports.after = '\nGOOD TO GO! \n\n' + 
+exports.after = '\nGOOD TO GO!\n' + 
                 'Get started by running _npm install_ in command prompt / terminal.';
 
 // Any existing file or directory matching this wildcard will cause a warning.
-exports.warnOn = '*';
+exports.warnOn = ['Gruntfile.js', 'package.json', '.gitignore'];
 
 // The actual init template.
 exports.template = function(grunt, init, done) {

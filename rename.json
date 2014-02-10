@@ -1,0 +1,4 @@
+{
+	
+	"index.html": "{%= src_dir_name %}/index.html"
+}

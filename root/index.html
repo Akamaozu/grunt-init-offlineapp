@@ -1,0 +1,31 @@
+<!--
+	
+	NOTES ON BUILDING AN OFFLINE-CAPABLE WEBAPP
+	
+	1. 	This doesn't have to to be an HTML file. Anything that outputs HTML is fine. 
+	2. 	It doesn't have to be called index either. 
+		You'll need to change the Gruntfile watch index task and both htmlbuild tasks to accomodate that change though. 
+	3. 	Any comment starting with NOTE: can be deleted.
+	4.	This note should also be deleted. Won't break anything if you don't remove it, but why would you keep it? 
+	
+-->
+
+<!DOCTYPE html>
+<html manifest="manifest.appcache">	
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+		<!-- build:style inline base -->
+		<!-- NOTE: grunt will output all CSS here -->
+		<!-- /build -->
+	</head>
+
+	<body>
+		<!-- SITE MARKUP GOES HERE -->
+
+		<!-- build:script inline core -->		
+		<!-- NOTE: grunt will output all JS here -->
+		<!-- /build -->
+	</body>
+</html>
